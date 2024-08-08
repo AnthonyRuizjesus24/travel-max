@@ -1,0 +1,165 @@
+---
+// Importación del componente y definición de enlaces
+import UserAvatar from "./UserAvatar.astro";
+
+const links = [
+  { href: "/", text: "Home" },
+  { href: "/destinos", text: "Destinos" },
+  { href: "/ofertas", text: "Ofertas" },
+  { href: "/servicios", text: "Servicios" },
+  { href: "/testimonios", text: "Testimonios" },
+  { href: "/blog", text: "Blog" },
+  { href: "/contactos", text: "Contactos" },
+];
+
+const pathname = new URL(Astro.request.url).pathname;
+---
+
+<head>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+
+<div class="header-component">
+  <div class="container header-content">
+    <a href="#" class="logo">Max Travel</a>
+    <nav class="nav-links">
+      {links.map(link => (
+        <a href={link.href} class={pathname === link.href ? "active" : ""}>{link.text}</a>
+      ))}
+    </nav>
+    <UserAvatar />
+    <div class="hamburger-menu" onclick="toggleMenu()">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function toggleMenu() {
+    const navLinks = document.querySelector('.nav-links');
+    const hamburgerMenu = document.querySelector('.hamburger-menu');
+    navLinks.classList.toggle('expanded');
+    hamburgerMenu.classList.toggle('open');
+  }
+
+  document.querySelector('.hamburger-menu').addEventListener('click', toggleMenu);
+</script>
+
+<style>
+  .header-component {
+    background: #292b2c;
+    color: #fff;
+    padding: 1rem 0;
+    position: relative; /* Asegura que los elementos dentro se posicionen respecto a este contenedor */
+  }
+
+  .header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  .logo {
+    font-size: 2rem;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 1rem;
+    position: relative; /* Permite que el z-index funcione correctamente */
+  }
+
+  .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  }
+
+  .nav-links a.active {
+    background-color: #49848f;
+    color: #fff;
+  }
+
+  .nav-links a:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    color: #000;
+    transform: scale(1.05);
+  }
+
+  .hamburger-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    z-index: 1000; /* Asegura que el menú hamburguesa esté por encima de otros elementos */
+  }
+
+  .hamburger-menu .bar {
+    width: 25px;
+    height: 3px;
+    background: #fff;
+    margin: 3px 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  .hamburger-menu.open .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .hamburger-menu.open .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger-menu.open .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.9); /* Fondo más oscuro para mayor contraste */
+      position: fixed; /* Cambia de absolute a fixed para mantenerlo en la vista */
+      bottom: 0; /* Asegura que se muestre en la parte inferior */
+      left: 0;
+      height: 85vh; /* Ocupa la mitad de la altura de la vista */
+      padding: 1rem;
+      box-sizing: border-box;
+      z-index: 1; /* Asegura que el menú de navegación se muestre por encima de otros elementos */
+      overflow-y: auto; /* Permite desplazamiento si hay muchos enlaces */
+    }
+
+    .nav-links.expanded {
+      display: flex;
+    }
+
+    .nav-links a {
+      margin: 0.5rem 0;
+      padding: 0.75rem;
+      text-align: center;
+    }
+
+    .hamburger-menu {
+      display: flex;
+    }
+  }
+  
+  /* Opcional: Añadir estilos adicionales para móviles más pequeños */
+  @media (max-width: 480px) {
+    .logo {
+      font-size: 1.5rem;
+    }
+
+    .nav-links a {
+      font-size: 0.9rem;
+    }
+  }
+</style>

@@ -1,16 +1,175 @@
 ---
-
+import '../styles/global.css'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
 ---
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explora Viajes</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <Header/>
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+    <section id="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Vive la Aventura</h1>
+            <p>Descubre los mejores destinos y ofertas para tus próximas vacaciones.</p>
+            <a href="#buscador" class="cta-button">Buscar tu Viaje</a>
+        </div>
+        
+    </section>
+    
+
+    <section id="destinos">
+        <div class="container">
+            <h2>Destinos Imperdibles</h2>
+            <div class="destinos-carousel">
+                <div class="destino-item">
+                    <img src="destino1.jpg" alt="Destino 1">
+                    <h3>Riviera Maya</h3>
+                </div>
+                <div class="destino-item">
+                    <img src="destino2.jpg" alt="Destino 2">
+                    <h3>Tokyo</h3>
+                </div>
+                <div class="destino-item">
+                    <img src="destino3.jpg" alt="Destino 3">
+                    <h3>Sydney</h3>
+                </div>
+                <!-- Más destinos aquí -->
+            </div>
+        </div>
+    </section>
+
+    <section id="ofertas">
+        <div class="container">
+            <h2>Ofertas Especiales</h2>
+            <div class="ofertas-grid">
+                <div class="oferta-item">
+                    <img src="oferta1.jpg" alt="Oferta 1">
+                    <div class="oferta-info">
+                        <h3>Escapada de Fin de Semana</h3>
+                        <p>Descuento del 20% en tu reserva.</p>
+                    </div>
+                </div>
+                <div class="oferta-item">
+                    <img src="oferta2.jpg" alt="Oferta 2">
+                    <div class="oferta-info">
+                        <h3>Vacaciones de Verano</h3>
+                        <p>Paquete familiar con un 15% de descuento.</p>
+                    </div>
+                </div>
+                <!-- Más ofertas aquí -->
+            </div>
+        </div>
+    </section>
+
+    <section id="buscador">
+        <div class="container">
+            <h2>Encuentra tu Destino Ideal</h2>
+            <form class="search-form" id="search-form">
+                <input type="text" id="search-input" placeholder="¿A dónde quieres ir?" aria-label="Buscar destino">
+                <button type="submit" class="cta-button">Buscar</button>
+            </form>
+            <div id="search-results" class="search-results"></div>
+        </div>
+    </section>
+
+    <section id="servicios">
+        <div class="container">
+            <h2>Nuestros Servicios</h2>
+            <div class="servicios-grid">
+                <div class="servicio-item">
+                    <div class="icon">&#128203;</div>
+                    <h3>Planificación de Viajes</h3>
+                    <p>Asesoría completa para tu próximo viaje.</p>
+                </div>
+                <div class="servicio-item">
+                    <div class="icon">&#128200;</div>
+                    <h3>Reservas Rápidas</h3>
+                    <p>Realiza tus reservas de forma rápida y sencilla.</p>
+                </div>
+                <div class="servicio-item">
+                    <div class="icon">&#128100;</div>
+                    <h3>Atención 24/7</h3>
+                    <p>Soporte disponible en cualquier momento.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonios">
+        <div class="container">
+            <h2>Lo Que Dicen Nuestros Clientes</h2>
+            <div class="testimonios-carousel">
+                <div class="testimonio-item">
+                    <p>"Una experiencia increíble, todo salió perfecto. ¡Recomiendo al 100%!"</p>
+                    <h4>Laura G.</h4>
+                </div>
+                <div class="testimonio-item">
+                    <p>"Servicio excepcional y atención al cliente impecable. Volveré sin duda."</p>
+                    <h4>Carlos M.</h4>
+                </div>
+                <!-- Más testimonios aquí -->
+            </div>
+        </div>
+    </section>
+
+    <section id="blog">
+        <div class="container">
+            <h2>Últimos Artículos</h2>
+            <div class="blog-posts">
+                <div class="blog-post">
+                    <img src="blog1.jpg" alt="Blog 1">
+                    <h3>10 Consejos para Viajar con Niños</h3>
+                    <p>Conoce los mejores consejos para disfrutar de tus vacaciones en familia.</p>
+                    <a href="#" class="cta-button">Leer Más</a>
+                </div>
+                <div class="blog-post">
+                    <img src="blog2.jpg" alt="Blog 2">
+                    <h3>Las Mejores Playas para el Verano</h3>
+                    <p>Descubre las playas más hermosas para tus vacaciones de verano.</p>
+                    <a href="#" class="cta-button">Leer Más</a>
+                </div>
+                <!-- Más artículos aquí -->
+            </div>
+        </div>
+    </section>
+
+    <section id="suscripcion">
+        <div class="container">
+            <h2>Suscríbete a Nuestro Boletín</h2>
+            <form class="subscription-form">
+                <input type="email" placeholder="Tu correo electrónico" aria-label="Correo electrónico">
+                <button type="submit" class="cta-button">Suscribirse</button>
+            </form>
+        </div>
+    </section>
+
+    <section id="mapa">
+        <div class="container">
+            <h2>Explora en el Mapa</h2>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=YOUR_MAP_URL" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+      <!-- <section id="contacto">
+        <div class="container">
+            <h2>Contacto Rápido</h2>
+            <p>Teléfono: 123-456-7890</p>
+            <p>Email: contacto@exploraviajes.com</p>
+            <a href="https://wa.me/1234567890" class="cta-button">Envíanos un Mensaje</a>
+        </div>
+    </section>-->
+    
+<Footer/>
+
+</body>
 </html>

@@ -1,0 +1,64 @@
+---
+import '../styles/servicios.css'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+---
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios - Explora Viajes</title>
+    <link rel="stylesheet" href="servicios.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha384-VjEeJIUNiKO8GG4I0g0OzAHPc5L4+Hgtqg2owOaiQkPoXvmsZn4lJ7o5tRm7ngNe" crossorigin="anonymous">
+</head>
+<body>
+   <Header/>
+    <section id="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Nuestros Servicios</h1>
+            <p>Explora nuestros servicios diseñados para hacer que tu experiencia de viaje sea inolvidable.</p>
+        </div>
+    </section>
+
+    <section id="servicios" class="servicios-section">
+        <div class="container">
+            <h2 class="section-title">Servicios Exclusivos</h2>
+            <div class="servicios-grid">
+                <div class="servicio-item">
+                    <i class="fa-solid fa-plane-departure icon"></i>
+                    <h3>Reservas de Vuelos</h3>
+                    <p>Encuentra y reserva vuelos a los mejores destinos del mundo con facilidad.</p>
+                </div>
+                <div class="servicio-item">
+                    <i class="fa-solid fa-hotel icon"></i>
+                    <h3>Hoteles y Alojamientos</h3>
+                    <p>Reserva alojamientos que se adapten a tu presupuesto y necesidades.</p>
+                </div>
+                <div class="servicio-item">
+                    <i class="fa-solid fa-bus icon"></i>
+                    <h3>Transporte Terrestre</h3>
+                    <p>Organiza transporte terrestre para moverte cómodamente en tu destino.</p>
+                </div>
+                <div class="servicio-item">
+                    <i class="fa-solid fa-utensils icon"></i>
+                    <h3>Restaurantes y Comida</h3>
+                    <p>Disfruta de las mejores experiencias culinarias con nuestras recomendaciones de restaurantes.</p>
+                </div>
+                <div class="servicio-item">
+                    <i class="fa-solid fa-map-marked-alt icon"></i>
+                    <h3>Guías Turísticas</h3>
+                    <p>Explora los destinos con la ayuda de nuestros guías turísticos expertos.</p>
+                </div>
+                <div class="servicio-item">
+                    <i class="fa-solid fa-camera icon"></i>
+                    <h3>Fotografía Profesional</h3>
+                    <p>Captura tus momentos especiales con nuestros servicios de fotografía profesional.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <Footer/>
+</body>
+</html>

@@ -1,0 +1,79 @@
+---
+import '../styles/global.css'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+import '../styles/contactos.css'
+---
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Travel-Max</title>
+    <link rel="stylesheet" href="../styles/global.css">
+    <link rel="stylesheet" href="../styles/contacto.css">
+</head>
+
+<body>
+    <Header/>
+    
+    <!-- Sección Hero -->
+    <section class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Contáctanos</h1>
+            <p>Estamos aquí para ayudarte con todas tus consultas y necesidades.</p>
+        </div>
+    </section>
+
+    <!-- Sección de Contacto -->
+    <section id="contacto" class="contacto-section">
+        <div class="container">
+            <h2 class="section-title">Ponte en Contacto</h2>
+            <div class="contacto-content">
+                <div class="contacto-form">
+                    <h3>Formulario de Contacto</h3>
+                    <form action="#" method="post">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre" required>
+
+                        <label for="email">Correo Electrónico:</label>
+                        <input type="email" id="email" name="email" required>
+
+                        <label for="mensaje">Mensaje:</label>
+                        <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+
+                        <button type="submit" class="submit-btn">Enviar</button>
+                    </form>
+                </div>
+                <div class="contacto-info">
+                    <h3>Información de Contacto</h3>
+                    <ul>
+                        <li>
+                            <span class="icon">📍</span>
+                            <p>123 Calle Principal, Ciudad, País</p>
+                        </li>
+                        <li>
+                            <span class="icon">📞</span>
+                            <p>(+123) 456-7890</p>
+                        </li>
+                        <li>
+                            <span class="icon">✉️</span>
+                            <p>info@travelmax.com</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mapa">
+                <h3>Encuéntranos</h3>
+                <div class="mapa-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=YOUR_MAP_URL" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <Footer/>
+</body>
+</html>

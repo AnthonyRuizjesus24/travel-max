@@ -1,0 +1,76 @@
+---
+import '../styles/global.css'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+import '../styles/blog.css'
+
+const blogPosts = [
+  {
+    title: "Explorando París: Lo Mejor de la Ciudad Luz",
+    date: "1 de agosto, 2024",
+    excerpt: "Descubre los lugares más emblemáticos de París y sumérgete en la cultura de la ciudad más romántica del mundo.",
+    image: "/images/paris-blog.jpg",
+    link: "/blog/paris"
+  },
+  {
+    title: "Guía Completa de Machu Picchu",
+    date: "15 de julio, 2024",
+    excerpt: "Todo lo que necesitas saber para visitar Machu Picchu, desde consejos prácticos hasta información sobre la historia.",
+    image: "/images/machu-picchu-blog.jpg",
+    link: "/blog/machu-picchu"
+  },
+  {
+    title: "Los Mejores Destinos para Vacaciones en 2024",
+    date: "30 de junio, 2024",
+    excerpt: "Descubre los destinos más recomendados para tus vacaciones este año, desde playas tropicales hasta ciudades culturales.",
+    image: "/images/destinos-blog.jpg",
+    link: "/blog/destinos"
+  }
+]
+---
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Travel-Max</title>
+    <link rel="stylesheet" href="../styles/global.css">
+    <link rel="stylesheet" href="../styles/blog.css">
+</head>
+
+<body>
+    <Header/>
+    
+    <!-- Sección Hero -->
+    <section  class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Blog de Viajes</h1>
+            <p>Lee nuestros últimos artículos y guías de viaje.</p>
+        </div>
+    </section>
+
+    <!-- Sección de Blog -->
+    <section id="blog" class="blog-section">
+        <div class="container">
+            <h2 class="section-title">Últimos Artículos</h2>
+            <div class="blog-grid">
+                {blogPosts.map(post => (
+                    <div class="blog-card">
+                        <img src={post.image} alt={`Imagen de ${post.title}`} class="blog-image" />
+                        <div class="blog-content">
+                            <h3 class="blog-title">{post.title}</h3>
+                            <p class="blog-date">{post.date}</p>
+                            <p class="blog-excerpt">{post.excerpt}</p>
+                            <a href={post.link} class="blog-read-more">Leer Más</a>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </section>
+
+    <Footer/>
+</body>
+</html>
