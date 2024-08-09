@@ -1,0 +1,104 @@
+<section id="ofertas" class="ofertas-section">
+    <div class="container">
+        <h2>Ofertas Especiales</h2>
+        <div class="ofertas-grid">
+            <div class="oferta-item">
+                <img src="cancun.jpg" alt="Escapada de Fin de Semana">
+                <div class="oferta-info">
+                    <h3>Escapada de Fin de Semana</h3>
+                    <p>Descuento del 20% en tu reserva.</p>
+                </div>
+            </div>
+            <div class="oferta-item">
+                <img src="caribe.jpg" alt="Vacaciones de Verano">
+                <div class="oferta-info">
+                    <h3>Vacaciones de Verano</h3>
+                    <p>Paquete familiar con un 15% de descuento.</p>
+                </div>
+            </div>
+                        
+            <!-- Más ofertas aquí -->
+        </div>
+    </div>
+</section>
+<style>
+    /* Estilos de las tarjetas */
+.ofertas-section {
+    background-color: #f4f4f4;
+    color: #fff;
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.ofertas-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    color: #ff5733;
+    animation: fadeIn 1s ease-out;
+}
+
+.ofertas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.oferta-item {
+    background-color: #333;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.oferta-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.oferta-info {
+    padding: 1.5rem;
+}
+
+.oferta-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #ff5733;
+}
+
+.oferta-info p {
+    font-size: 1rem;
+    margin: 0;
+    color: #ddd;
+}
+
+.oferta-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.oferta-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .ofertas-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+</style>

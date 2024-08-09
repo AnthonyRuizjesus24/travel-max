@@ -1,0 +1,104 @@
+<section id="destinos" class="destinos-section">
+    <div class="container">
+        <h2>Destinos Imperdibles</h2>
+        <div class="destinos-carousel">
+            <div class="destino-item">
+                <img src="rivera-maya.jpg" alt="Riviera Maya">
+                <h3>Riviera Maya</h3>
+            </div>
+            <div class="destino-item">
+                <img src="machu-picchu.jpg" alt="Machu Picchu">
+                <h3>Machu Picchu</h3>
+            </div>
+            <div class="destino-item">
+                <img src="brasil.jpg" alt="Cristo Redentor">
+                <h3>Cristo Redentor</h3>
+            </div>
+            <!-- Más destinos aquí -->
+        </div>
+    </div>
+</section>
+
+<style>
+    section {
+    padding: 4rem 0;
+}
+
+.destinos-section {
+    background-color: #f4f4f4;
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.destinos-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    color: #333;
+    animation: fadeIn 1s ease-out;
+}
+
+.destinos-carousel {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+}
+
+.destino-item {
+    flex: 0 0 auto;
+    width: 300px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    scroll-snap-align: start;
+}
+
+.destino-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.destino-item h3 {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+    color: #ff5733;
+}
+
+.destino-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.destino-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .destinos-carousel {
+        flex-direction: column;
+    }
+
+    .destino-item {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+</style>

@@ -1,0 +1,99 @@
+<section id="servicios" class="servicios-section">
+    <div class="container">
+        <h2>Nuestros Servicios</h2>
+        <div class="servicios-grid">
+            <div class="servicio-item">
+                <div class="icon">&#128203;</div>
+                <h3>Planificación de Viajes</h3>
+                <p>Asesoría completa para tu próximo viaje.</p>
+            </div>
+            <div class="servicio-item">
+                <div class="icon">&#128200;</div>
+                <h3>Reservas Rápidas</h3>
+                <p>Realiza tus reservas de forma rápida y sencilla.</p>
+            </div>
+            <div class="servicio-item">
+                <div class="icon">&#128100;</div>
+                <h3>Atención 24/7</h3>
+                <p>Soporte disponible en cualquier momento.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .servicios-section {
+    background-color: #f7f7f7;
+    color: #333;
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.servicios-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    color: #ff5733;
+    animation: slideIn 1s ease-out;
+}
+
+.servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.servicio-item {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.servicio-item .icon {
+    font-size: 3rem;
+    color: #ff5733;
+    margin-bottom: 1rem;
+    transition: color 0.3s ease;
+}
+
+.servicio-item h3 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.servicio-item p {
+    font-size: 1rem;
+    color: #777;
+}
+
+.servicio-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.servicio-item:hover .icon {
+    color: #333;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .servicios-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+</style>
