@@ -4,99 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Filtrar Pasajes</title>
-    <style>
-        /* General Styles */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f1f1f1;
-        }
-
-        #filtro-pasaje {
-            background-color: #ffffff;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            margin: 2rem auto;
-            max-width: 800px;
-            width: 90%;
-        }
-
-        #filtro-pasaje h2 {
-            font-size: 1.5rem;
-            color: #333;
-            margin-bottom: 1rem;
-            text-align: center;
-        }
-
-        form {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .filtro-grupo {
-            flex: 1 1 100%;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .filtro-grupo label {
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-            color: #333;
-        }
-
-        .filtro-grupo select,
-        .filtro-grupo input[type="number"],
-        .filtro-grupo input[type="date"] {
-            padding: 0.75rem;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            background-color: #fff;
-            font-size: 1rem;
-            color: #333;
-            transition: border-color 0.3s;
-            width: 100%;
-        }
-
-        .filtro-grupo select:focus,
-        .filtro-grupo input[type="number"]:focus,
-        .filtro-grupo input[type="date"]:focus {
-            border-color: #007bff;
-            outline: none;
-        }
-
-        .btn-aplicar {
-            padding: 0.75rem 1.5rem;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1rem;
-            transition: background-color 0.3s;
-            width: 100%;
-        }
-
-        .btn-aplicar:hover {
-            background-color: #0056b3;
-        }
-
-        /* Responsive Design */
-        @media (min-width: 600px) {
-            .filtro-grupo {
-                flex: 1 1 calc(50% - 1rem);
-            }
-        }
-
-        @media (min-width: 900px) {
-            .filtro-grupo {
-                flex: 1 1 calc(33.333% - 1rem);
-            }
-        }
-    </style>
 </head>
 <body>
     <section id="filtro-pasaje">
@@ -134,8 +41,7 @@
                 <label for="fecha-regreso">Fecha de Regreso:</label>
                 <input type="date" id="fecha-regreso" name="fecha-regreso" disabled>
             </div>
-
-            <button type="submit" class="btn-aplicar">Buscar Pasajes</button>
+            <a href="cotizador" class="btn-aplicar">Buscar Pasajes</a>
         </form>
     </section>
     <script>
@@ -161,4 +67,99 @@
     </script>    
 </body>
 </html>
+<style>
+    /* General Styles */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f1f1f1;
+    }
 
+    #filtro-pasaje {
+        background-color: #ffffff;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        margin: 2rem auto;
+        max-width: 800px;
+        width: 90%;
+    }
+
+    #filtro-pasaje h2 {
+        font-size: 1.5rem;
+        color: #333;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    form {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .filtro-grupo {
+        flex: 1 1 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .filtro-grupo label {
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+        color: #333;
+    }
+
+    .filtro-grupo select,
+    .filtro-grupo input[type="number"],
+    .filtro-grupo input[type="date"] {
+        padding: 0.75rem;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        background-color: #fff;
+        font-size: 1rem;
+        color: #333;
+        transition: border-color 0.3s;
+        width: 100%;
+    }
+
+    .filtro-grupo select:focus,
+    .filtro-grupo input[type="number"]:focus,
+    .filtro-grupo input[type="date"]:focus {
+        border-color: #007bff;
+        outline: none;
+    }
+
+    .btn-aplicar {
+        padding: 0.75rem 1.5rem;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: background-color 0.3s;
+        width: 100%;
+        text-decoration: none;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        text-align: center;
+    }
+
+    .btn-aplicar:hover {
+        background-color: #0056b3;
+    }
+
+    /* Responsive Design */
+    @media (min-width: 600px) {
+        .filtro-grupo {
+            flex: 1 1 calc(50% - 1rem);
+        }
+    }
+
+    @media (min-width: 900px) {
+        .filtro-grupo {
+            flex: 1 1 calc(33.333% - 1rem);
+        }
+    }
+</style>

@@ -1,0 +1,160 @@
+---
+import UserAvatar from "./UserAvatar.astro";
+
+const links = [
+  { href: "/FlightCard", text: "Vuelos" },
+  { href: "/HotelCard", text: "Hoteles" },
+  { href: "/BusCard", text: "Autos" },
+];
+
+const pathname = new URL(Astro.request.url).pathname;
+---
+
+<head>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+
+<div class="header-component">
+  <div class="container header-content">
+    <a href="/" class="logo">Max Travel</a>
+    <nav class="nav-links">
+      {links.map(link => (
+        <a href={link.href} class={pathname === link.href ? "active" : ""}>{link.text}</a>
+      ))}
+    </nav>
+    <UserAvatar />
+    <div class="hamburger-menu" onclick="toggleMenu()">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .header-component {
+    background: #1c1c1c;
+    color: #f5f5f5;
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+  }
+
+  .header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .logo {
+    font-size: 2rem;
+    color: #f5f5f5;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .nav-links a {
+    color: #f5f5f5;
+    text-decoration: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    font-weight: 500;
+  }
+
+  .nav-links a.active {
+    background-color: #007bff;
+    color: #fff;
+  }
+
+  .nav-links a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #007bff;
+    transform: scale(1.1);
+  }
+
+  .hamburger-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+
+  .hamburger-menu .bar {
+    width: 30px;
+    height: 4px;
+    background: #f5f5f5;
+    margin: 5px 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  .hamburger-menu.open .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .hamburger-menu.open .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger-menu.open .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      background: #333;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      padding: 2rem;
+      box-sizing: border-box;
+      z-index: 1000;
+      overflow-y: auto;
+    }
+
+    .nav-links.expanded {
+      display: flex;
+    }
+
+    .nav-links a {
+      margin: 1rem 0;
+      padding: 1rem;
+      font-size: 1.2rem;
+      text-align: center;
+    }
+
+    .hamburger-menu {
+      display: flex;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .logo {
+      font-size: 1.5rem;
+    }
+
+    .nav-links a {
+      font-size: 1rem;
+    }
+  }
+</style>
+
+<script>
+  function toggleMenu() {
+    const navLinks = document.querySelector('.nav-links');
+    navLinks.classList.toggle('expanded');
+    const hamburger = document.querySelector('.hamburger-menu');
+    hamburger.classList.toggle('open');
+  }
+</script>

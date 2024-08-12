@@ -1,0 +1,153 @@
+/* styles/global.css */
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f1f1f1;
+  }
+  
+  .hero-section {
+    color: #fff;
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.5rem;
+    margin: 0;
+  }
+  
+  .hero-content p {
+    font-size: 1.25rem;
+    margin-top: 0.5rem;
+  }
+  
+  #filtro-pasaje {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 2rem auto;
+    max-width: 800px;
+    width: 90%;
+  }
+  
+  #filtro-pasaje h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .filtro-grupo {
+    flex: 1 1 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .filtro-grupo label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #333;
+  }
+  
+  .filtro-grupo select,
+  .filtro-grupo input[type="number"],
+  .filtro-grupo input[type="date"] {
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    font-size: 1rem;
+    color: #333;
+    transition: border-color 0.3s;
+    width: 100%;
+  }
+  
+  .filtro-grupo select:focus,
+  .filtro-grupo input[type="number"]:focus,
+  .filtro-grupo input[type="date"]:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  .btn-aplicar {
+    padding: 0.75rem 1.5rem;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+    width: 100%;
+    text-decoration: none;
+    text-align: center;
+  }
+  
+  .btn-aplicar:hover {
+    background-color: #0056b3;
+  }
+  
+  .flights-section {
+    padding: 2rem;
+    background-color: #ffffff;
+  }
+  
+  .flights-section h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  .flights-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .flights-table th,
+  .flights-table td {
+    padding: 1rem;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  .flights-table th {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  .btn-book {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #28a745;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  .btn-book:hover {
+    background-color: #218838;
+  }
+  
+  /* Responsive Design */
+  @media (min-width: 600px) {
+    .filtro-grupo {
+      flex: 1 1 calc(50% - 1rem);
+    }
+  }
+  
+  @media (min-width: 900px) {
+    .filtro-grupo {
+      flex: 1 1 calc(33.333% - 1rem);
+    }
+  }
+  

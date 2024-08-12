@@ -1,0 +1,13 @@
+---
+export interface Props {
+  company: string;
+  price: string;
+}
+
+const { company, price } = Astro.props;
+---
+
+<div class="card bus-card">
+  <h3>{company}</h3>
+  <p>Precio: {price}</p>
+</div>

@@ -1,0 +1,128 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import MenuCompra from '../components/MenuCompra.astro';
+import '../styles/global.css';
+import '../styles/pricing.css';
+---
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compra de Pasajes - Explora Viajes</title>
+  <link rel="stylesheet" href="../styles/global.css">
+  <link rel="stylesheet" href="../styles/pricing.css">
+</head>
+<body>
+  <Header/>
+  <main>
+    <section class="hero-section">
+      <div class="hero-content">
+        <h1>Compra Tus Pasajes</h1>
+        <p>Encuentra y reserva los mejores vuelos para tu próxima aventura.</p>
+      </div>
+    </section>
+    <MenuCompra/>
+    <section id="filtro-pasaje">
+      <h2>Filtrar Pasajes</h2>
+      <form>
+        <div class="filtro-grupo">
+          <label for="tipo-pasaje">Tipo de Pasaje:</label>
+          <select id="tipo-pasaje" name="tipo-pasaje" onchange="toggleFechaRegreso()">
+            <option value="ida-vuelta">Ida y Vuelta</option>
+            <option value="solo-ida">Solo Ida</option>
+            <option value="multidestino">Multidestino</option>
+          </select>
+        </div>
+
+        <div class="filtro-grupo">
+          <label for="clase">Clase:</label>
+          <select id="clase" name="clase">
+            <option value="economica">Económica</option>
+            <option value="ejecutiva">Ejecutiva</option>
+            <option value="primera">Primera Clase</option>
+          </select>
+        </div>
+
+        <div class="filtro-grupo">
+          <label for="pasajeros">Número de Pasajeros:</label>
+          <input type="number" id="pasajeros" name="pasajeros" min="1" max="10" value="1">
+        </div>
+
+        <div class="filtro-grupo">
+          <label for="fecha-salida">Fecha de Salida:</label>
+          <input type="date" id="fecha-salida" name="fecha-salida">
+        </div>
+
+        <div class="filtro-grupo">
+          <label for="fecha-regreso">Fecha de Regreso:</label>
+          <input type="date" id="fecha-regreso" name="fecha-regreso" disabled>
+        </div>
+        <a href="cotizador" class="btn-aplicar">Buscar Pasajes</a>
+      </form>
+    </section>
+
+    <section class="flights-section">
+      <div class="container">
+        <h2>Resultados de Búsqueda</h2>
+        <table class="flights-table">
+          <thead>
+            <tr>
+              <th>Aerolínea</th>
+              <th>Vuelo</th>
+              <th>Precio</th>
+              <th>Horario de Salida</th>
+              <th>Horario de Llegada</th>
+              <th>Reserva</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>LATAM</td>
+              <td>LA1234</td>
+              <td>$300 USD</td>
+              <td>08:00 AM</td>
+              <td>11:00 AM</td>
+              <td><a href="/reservar" class="btn-book">Reservar</a></td>
+            </tr>
+            <tr>
+              <td>American Airlines</td>
+              <td>AA5678</td>
+              <td>$350 USD</td>
+              <td>09:30 AM</td>
+              <td>12:30 PM</td>
+              <td><a href="/reservar" class="btn-book">Reservar</a></td>
+            </tr>
+            <!-- Más filas de resultados -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <Footer/>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        function toggleFechaRegreso() {
+            const tipoPasaje = (document.getElementById('tipo-pasaje') as HTMLSelectElement).value;
+            const fechaRegreso = document.getElementById('fecha-regreso') as HTMLInputElement;
+            
+            if (tipoPasaje === 'ida-vuelta') {
+                fechaRegreso.disabled = false;
+            } else {
+                fechaRegreso.disabled = true;
+                fechaRegreso.value = ''; // Limpia el campo si se desactiva
+            }
+        }
+
+        // Llamar a la función al cargar la página para configurar el estado inicial
+        toggleFechaRegreso();
+
+        // Asociar la función al cambio del select
+        document.getElementById('tipo-pasaje')?.addEventListener('change', toggleFechaRegreso);
+    });
+</script>    
+</body>
+</html>
