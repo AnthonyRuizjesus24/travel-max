@@ -1,0 +1,207 @@
+<section id="filtros">
+    <h2>Filtra tu Viaje</h2>
+    <form>
+        <!-- Duración del Viaje -->
+        <div class="filtro-grupo">
+            <label for="duracion">Duración del Viaje:</label>
+            <select id="duracion" name="duracion">
+                <option value="todo">Todos</option>
+                <option value="1-semana">1 semana</option>
+                <option value="2-semanas">2 semanas</option>
+                <option value="mas">Más de 2 semanas</option>
+            </select>
+        </div>
+
+        <!-- Temporada o Fechas -->
+        <div class="filtro-grupo">
+            <label for="temporada">Temporada o Fechas:</label>
+            <select id="temporada" name="temporada">
+                <option value="todo">Todos</option>
+                <option value="verano">Verano</option>
+                <option value="invierno">Invierno</option>
+                <option value="primavera">Primavera</option>
+                <option value="otono">Otoño</option>
+                <option value="fechas">Fechas Específicas</option>
+            </select>
+        </div>
+
+        <!-- Categorías de Alojamiento -->
+        <div class="filtro-grupo">
+            <label for="alojamiento">Categorías de Alojamiento:</label>
+            <select id="alojamiento" name="alojamiento">
+                <option value="todo">Todos</option>
+                <option value="hoteles">Hoteles</option>
+                <option value="hostales">Hostales</option>
+                <option value="apartamentos">Apartamentos</option>
+                <option value="resorts">Resorts</option>
+            </select>
+        </div>
+
+        <!-- Actividades Disponibles -->
+        <div class="filtro-grupo">
+            <label for="actividades">Actividades Disponibles:</label>
+            <select id="actividades" name="actividades">
+                <option value="todo">Todos</option>
+                <option value="tours">Tours Guiados</option>
+                <option value="actividades">Actividades al Aire Libre</option>
+                <option value="visitas">Visitas Culturales</option>
+            </select>
+        </div>
+
+        <!-- Clima -->
+        <div class="filtro-grupo">
+            <label for="clima">Clima:</label>
+            <select id="clima" name="clima">
+                <option value="todo">Todos</option>
+                <option value="calido">Cálido</option>
+                <option value="templado">Templado</option>
+                <option value="frio">Frío</option>
+                <option value="lluvioso">Lluvioso</option>
+            </select>
+        </div>
+
+        <!-- Aerolínea de Preferencia -->
+        <div class="filtro-grupo">
+            <label for="aerolinea">Aerolínea de Preferencia:</label>
+            <select id="aerolinea" name="aerolinea">
+                <option value="todo">Todas</option>
+                <option value="aerolinea1">Aerolínea 1</option>
+                <option value="aerolinea2">Aerolínea 2</option>
+                <option value="aerolinea3">Aerolínea 3</option>
+                <option value="aerolinea4">Aerolínea 4</option>
+            </select>
+        </div>
+
+        <!-- Transporte -->
+        <div class="filtro-grupo">
+            <label for="transporte">Transporte:</label>
+            <select id="transporte" name="transporte">
+                <option value="todo">Todos</option>
+                <option value="avion">Avión</option>
+                <option value="tren">Tren</option>
+                <option value="bus">Bus</option>
+                <option value="coche">Coche</option>
+                <option value="barco">Barco</option>
+            </select>
+        </div>
+
+        <!-- Botón de Aplicación -->
+        <button type="submit" class="btn-aplicar">Aplicar Filtros</button>
+    </form>
+</section>
+
+<style>
+/* Filtros Modernos */
+#filtros {
+    background: #f9f9f9;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    margin: 2rem auto;
+    width: 90%;
+    max-width: 800px;
+}
+
+#filtros h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #333;
+    font-weight: 700;
+    text-align: center;
+    position: relative;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #3498db;
+}
+
+form {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.filtro-grupo {
+    display: flex;
+    flex-direction: column;
+}
+
+.filtro-grupo label {
+    font-weight: 600;
+    color: #555;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.filtro-grupo select {
+    padding: 0.75rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    font-size: 1rem;
+    color: #333;
+    width: 100%;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.filtro-grupo select:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+.btn-aplicar {
+    padding: 0.75rem 1.5rem;
+    background: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 1rem;
+    display: block;
+    width: 100%;
+}
+
+.btn-aplicar:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+    #filtros {
+        padding: 1.5rem;
+    }
+
+    #filtros h2 {
+        font-size: 1.5rem;
+    }
+
+    .filtro-grupo select {
+        font-size: 0.9rem;
+    }
+
+    .btn-aplicar {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #filtros {
+        padding: 1rem;
+        width: 95%;
+    }
+
+    #filtros h2 {
+        font-size: 1.25rem;
+    }
+
+    .filtro-grupo select {
+        font-size: 0.8rem;
+    }
+
+    .btn-aplicar {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+    }
+}
+</style>

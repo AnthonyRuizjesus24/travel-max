@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtrar Pasajes</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f1f1f1;
+        }
+
+        #filtro-pasaje {
+            background-color: #ffffff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin: 2rem auto;
+            max-width: 800px;
+            width: 90%;
+        }
+
+        #filtro-pasaje h2 {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .filtro-grupo {
+            flex: 1 1 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .filtro-grupo label {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .filtro-grupo select,
+        .filtro-grupo input[type="number"],
+        .filtro-grupo input[type="date"] {
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #fff;
+            font-size: 1rem;
+            color: #333;
+            transition: border-color 0.3s;
+            width: 100%;
+        }
+
+        .filtro-grupo select:focus,
+        .filtro-grupo input[type="number"]:focus,
+        .filtro-grupo input[type="date"]:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        .btn-aplicar {
+            padding: 0.75rem 1.5rem;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+            width: 100%;
+        }
+
+        .btn-aplicar:hover {
+            background-color: #0056b3;
+        }
+
+        /* Responsive Design */
+        @media (min-width: 600px) {
+            .filtro-grupo {
+                flex: 1 1 calc(50% - 1rem);
+            }
+        }
+
+        @media (min-width: 900px) {
+            .filtro-grupo {
+                flex: 1 1 calc(33.333% - 1rem);
+            }
+        }
+    </style>
+</head>
+<body>
+    <section id="filtro-pasaje">
+        <h2>Filtrar Pasajes</h2>
+        <form>
+            <div class="filtro-grupo">
+                <label for="tipo-pasaje">Tipo de Pasaje:</label>
+                <select id="tipo-pasaje" name="tipo-pasaje" onchange="toggleFechaRegreso()">
+                    <option value="ida-vuelta">Ida y Vuelta</option>
+                    <option value="solo-ida">Solo Ida</option>
+                    <option value="multidestino">Multidestino</option>
+                </select>
+            </div>
+
+            <div class="filtro-grupo">
+                <label for="clase">Clase:</label>
+                <select id="clase" name="clase">
+                    <option value="economica">Económica</option>
+                    <option value="ejecutiva">Ejecutiva</option>
+                    <option value="primera">Primera Clase</option>
+                </select>
+            </div>
+
+            <div class="filtro-grupo">
+                <label for="pasajeros">Número de Pasajeros:</label>
+                <input type="number" id="pasajeros" name="pasajeros" min="1" max="10" value="1">
+            </div>
+
+            <div class="filtro-grupo">
+                <label for="fecha-salida">Fecha de Salida:</label>
+                <input type="date" id="fecha-salida" name="fecha-salida">
+            </div>
+
+            <div class="filtro-grupo">
+                <label for="fecha-regreso">Fecha de Regreso:</label>
+                <input type="date" id="fecha-regreso" name="fecha-regreso" disabled>
+            </div>
+
+            <button type="submit" class="btn-aplicar">Buscar Pasajes</button>
+        </form>
+    </section>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            function toggleFechaRegreso() {
+                const tipoPasaje = (document.getElementById('tipo-pasaje') as HTMLSelectElement).value;
+                const fechaRegreso = document.getElementById('fecha-regreso') as HTMLInputElement;
+                
+                if (tipoPasaje === 'ida-vuelta') {
+                    fechaRegreso.disabled = false;
+                } else {
+                    fechaRegreso.disabled = true;
+                    fechaRegreso.value = ''; // Limpia el campo si se desactiva
+                }
+            }
+    
+            // Llamar a la función al cargar la página para configurar el estado inicial
+            toggleFechaRegreso();
+    
+            // Asociar la función al cambio del select
+            document.getElementById('tipo-pasaje')?.addEventListener('change', toggleFechaRegreso);
+        });
+    </script>    
+</body>
+</html>
+

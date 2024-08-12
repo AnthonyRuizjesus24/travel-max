@@ -1,0 +1,262 @@
+---
+import '../styles/global.css'
+import Header from "../components/Header.astro"
+import Footer from '../components/Footer.astro'
+---
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10 Consejos para Viajar con Niños</title>
+    
+</head>
+<body>
+   <Header/>
+    <section class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>10 Consejos para Viajar con Niños</h1>
+            <p>Descubre cómo hacer de tu próximo viaje con niños una experiencia inolvidable y sin estrés.</p>
+            <a href="/" class="cta-button">Explorar Consejos</a>
+        </div>
+    </section>
+
+    <div class="container main-content">
+        <section id="tips">
+            <h2>Consejos Útiles</h2>
+            <ul class="tips">
+                <li class="tip">
+                    <h3>1. Planifica con Anticipación</h3>
+                    <p>Asegúrate de planificar tu viaje con tiempo para que puedas hacer las reservas necesarias y preparar a tus hijos para el viaje.</p>
+                </li>
+                <li class="tip">
+                    <h3>2. Empaca de Manera Inteligente</h3>
+                    <p>Lleva solo lo esencial y asegúrate de incluir artículos que puedan hacer que el viaje sea más cómodo para tus hijos, como juguetes y snacks.</p>
+                </li>
+                <li class="tip">
+                    <h3>3. Mantén una Rutina</h3>
+                    <p>Intenta mantener la rutina de sueño y alimentación de tus hijos lo más regular posible para evitar que se sientan incómodos.</p>
+                </li>
+                <li class="tip">
+                    <h3>4. Lleva Entretenimiento</h3>
+                    <p>Asegúrate de llevar suficientes opciones de entretenimiento para mantener a los niños ocupados durante el viaje, como libros, tabletas o juegos.</p>
+                </li>
+                <li class="tip">
+                    <h3>5. Mantén a los Niños Hidratados</h3>
+                    <p>Es importante mantener a los niños hidratados, especialmente durante los viajes largos o en climas cálidos.</p>
+                </li>
+                <li class="tip">
+                    <h3>6. Haz Paradas Frecuentes</h3>
+                    <p>Si viajas en coche, haz paradas frecuentes para que los niños puedan estirarse y jugar un poco.</p>
+                </li>
+                <li class="tip">
+                    <h3>7. Prepárate para el Clima</h3>
+                    <p>Asegúrate de empacar ropa adecuada para el clima del destino y lleva siempre un par de cambios de ropa extra para cualquier accidente.</p>
+                </li>
+                <li class="tip">
+                    <h3>8. Involucra a los Niños en la Planificación</h3>
+                    <p>Involucra a tus hijos en la planificación del viaje para que se sientan más emocionados y comprometidos.</p>
+                </li>
+                <li class="tip">
+                    <h3>9. Sé Flexible</h3>
+                    <p>Las cosas no siempre saldrán según lo planeado, así que mantén una actitud flexible y adapta tus planes según sea necesario.</p>
+                </li>
+                <li class="tip">
+                    <h3>10. Disfruta el Viaje</h3>
+                    <p>No olvides disfrutar del viaje y hacer que sea una experiencia memorable para toda la familia.</p>
+                </li>
+            </ul>
+        </section>
+    </div>
+
+    <Footer/>
+</body>
+</html>
+<style>
+    /* Reset básico */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Arial', sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background-color: #f4f4f4;
+    }
+
+    .container {
+        width: 80%;
+        margin: auto;
+        overflow: hidden;
+    }
+
+
+    /* Estilos del hero */
+    .hero-section {
+        position: relative;
+        height: 60vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-align: center;
+        overflow: hidden;
+        background: url('paris.jpg') no-repeat center center/cover;
+        z-index: 0;
+    }
+
+    .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 0;
+        max-width: 700px;
+        padding: 0 20px;
+        text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    .hero-content p {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .cta-button {
+        background-color: #ff5733;
+        color: #fff;
+        padding: 1rem 2rem;
+        border: none;
+        border-radius: 5px;
+        font-size: 1rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .cta-button:hover {
+        background-color: #ff9a3c;
+        transform: translateY(-2px);
+    }
+
+    /* Estilos del contenido principal */
+    .main-content {
+        padding: 2rem 0;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .main-content h2 {
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        color: #ff5733;
+    }
+
+    .tips {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .tip {
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        margin-bottom: 1.5rem;
+        padding: 1.5rem;
+        transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .tip:hover {
+        background-color: #f1f1f1;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .tip h3 {
+        font-size: 1.25rem;
+        color: #ff5733;
+    }
+
+    .tip p {
+        font-size: 1rem;
+        color: #666;
+    }
+
+    footer {
+        text-align: center;
+        padding: 1rem;
+        background-color: #333;
+        color: #fff;
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+    }
+
+    /* Estilos responsivos */
+    @media (max-width: 768px) {
+        .container {
+            width: 90%;
+        }
+
+        .header-content {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        nav ul {
+            flex-direction: column;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin-left: 0;
+            margin-bottom: 10px;
+        }
+
+        .hero-section {
+            height: 50vh;
+        }
+
+        .cta-button {
+            font-size: 0.9rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .logo {
+            font-size: 1.5rem;
+        }
+
+        nav ul li a {
+            font-size: 1rem;
+        }
+
+        .cta-button {
+            padding: 0.5rem 1rem;
+            font-size: 0.8rem;
+        }
+
+        .hero-section {
+            height: 60vh;
+        }
+    }
+</style>

@@ -7,6 +7,7 @@ import Destinosindex from '../components/Destinosindex.astro'
 import Ofertasespeciales from '../components/Ofertasespeciales.astro'
 import Nuestroservicios from '../components/Nuestroservicios.astro'
 import UltimoArticulo from '../components/UltimoArticulo.astro'
+import Scroll from '../components/Scroll.astro'
 ---
 <!DOCTYPE html>
 <html lang="es">
@@ -20,13 +21,16 @@ import UltimoArticulo from '../components/UltimoArticulo.astro'
     <Header/>
 
     <section id="hero" class="hero-section">
-        <div class="hero-overlay"></div>
+        <div class="hero-bg-image"></div>
         <div class="hero-content">
             <h1>Vive la Aventura</h1>
-            <p>Descubre los mejores destinos y ofertas para tus próximas vacaciones.</p>
+            <p>Explora los destinos más increíbles del mundo con ofertas exclusivas.</p>
             <a href="/destinos" class="cta-button">Explora Destinos</a>
         </div>
+        <Scroll/>
+    
     </section>
+    
     <Buscador/> 
     <Destinosindex/>
     <Ofertasespeciales/>
@@ -43,6 +47,5 @@ import UltimoArticulo from '../components/UltimoArticulo.astro'
     </section>-->
     
 <Footer/>
-
 </body>
 </html>

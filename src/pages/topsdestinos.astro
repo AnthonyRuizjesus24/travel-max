@@ -1,0 +1,245 @@
+---
+import '../styles/global.css'
+import Header from "../components/Header.astro"
+import Footer from '../components/Footer.astro'
+---
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 5 Destinos Inexplorados en Sudamérica</title>
+</head>
+<body>
+    <Header/>
+
+    <section class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Top 5 Destinos Inexplorados en Sudamérica</h1>
+            <p>Descubre los destinos menos conocidos pero más fascinantes que Sudamérica tiene para ofrecer.</p>
+            <a href="/" class="cta-button">Explorar Destinos</a>
+        </div>
+    </section>
+
+    <div class="container main-content">
+        <section id="destinations">
+            <h2>Destinos Inexplorados</h2>
+            <ul class="destinations">
+                <li class="destination-item">
+                    <img src="destination1.jpg" alt="Destino 1">
+                    <div class="destination-info">
+                        <h3>Valle de la Luna, Bolivia</h3>
+                        <p>Un paisaje surrealista formado por formaciones rocosas únicas, ideal para los aventureros.</p>
+                    </div>
+                </li>
+                <li class="destination-item">
+                    <img src="destination2.jpg" alt="Destino 2">
+                    <div class="destination-info">
+                        <h3>Parque Nacional Tayrona, Colombia</h3>
+                        <p>Un paraíso natural con playas vírgenes y una rica biodiversidad en la costa caribeña de Colombia.</p>
+                    </div>
+                </li>
+                <li class="destination-item">
+                    <img src="destination3.jpg" alt="Destino 3">
+                    <div class="destination-info">
+                        <h3>La Ruta de los Seis Miles, Chile</h3>
+                        <p>Un recorrido espectacular por montañas y volcanes que supera los 6000 metros de altitud.</p>
+                    </div>
+                </li>
+                <li class="destination-item">
+                    <img src="destination4.jpg" alt="Destino 4">
+                    <div class="destination-info">
+                        <h3>Lençóis Maranhenses, Brasil</h3>
+                        <p>Un desierto de dunas con lagunas de agua cristalina que se forman durante la temporada de lluvias.</p>
+                    </div>
+                </li>
+                <li class="destination-item">
+                    <img src="destination5.jpg" alt="Destino 5">
+                    <div class="destination-info">
+                        <h3>Reserva Nacional de Tambopata, Perú</h3>
+                        <p>Una reserva rica en vida silvestre y paisajes amazónicos, ideal para ecoturismo y aventura.</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </div>
+
+    <Footer/>
+</body>
+</html>
+
+<style>
+    /* Reset básico */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Arial', sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background-color: #f4f4f4;
+    }
+
+    .container {
+        width: 80%;
+        margin: auto;
+        overflow: hidden;
+    }
+
+    /* Estilos del hero */
+    .hero-section {
+        position: relative;
+        height: 60vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-align: center;
+        overflow: hidden;
+        background: url('paris.jpg') no-repeat center center/cover;
+        z-index: 0;
+    }
+
+    .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 0;
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 0;
+        max-width: 700px;
+        padding: 0 20px;
+        text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    .hero-content p {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .cta-button {
+        background-color: #ff5733;
+        color: #fff;
+        padding: 1rem 2rem;
+        border: none;
+        border-radius: 5px;
+        font-size: 1rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .cta-button:hover {
+        background-color: #ff9a3c;
+        transform: translateY(-2px);
+    }
+
+    /* Estilos del contenido principal */
+    .main-content {
+        padding: 2rem 0;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .main-content h2 {
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        color: #ff5733;
+    }
+
+    .destinations {
+        list-style-type: none;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .destination-item {
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        flex: 1 1 calc(50% - 1rem);
+        margin-bottom: 1.5rem;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .destination-item:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .destination-item img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .destination-info {
+        padding: 1rem;
+    }
+
+    .destination-info h3 {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+        color: #ff5733;
+    }
+
+    .destination-info p {
+        font-size: 1rem;
+        color: #666;
+    }
+
+    /* Estilos responsivos */
+    @media (max-width: 768px) {
+        .container {
+            width: 90%;
+        }
+
+        .hero-section {
+            height: 50vh;
+        }
+
+        .cta-button {
+            font-size: 0.9rem;
+        }
+
+        .destination-item {
+            flex: 1 1 100%;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .cta-button {
+            padding: 0.5rem 1rem;
+            font-size: 0.8rem;
+        }
+
+        .hero-section {
+            height: 60vh;
+        }
+    }
+</style>

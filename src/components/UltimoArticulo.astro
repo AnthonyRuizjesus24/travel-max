@@ -5,136 +5,261 @@
             <div class="blog-post">
                 <div class="post-thumbnail">
                     <img src="niños.jpeg" alt="Blog 1">
-                    <div class="post-overlay">
-                        <a href="#" class="cta-button">Leer Más</a>
-                    </div>
                 </div>
                 <div class="post-content">
-                    <h3>10 Consejos para Viajar con Niños</h3>
+                    <h3><span class="dropcap">1</span>0 Consejos para Viajar con Niños</h3>
                     <p>Conoce los mejores consejos para disfrutar de tus vacaciones en familia.</p>
+                    <a href="consejos" class="cta-button">Leer Más</a>
                 </div>
             </div>
             <div class="blog-post">
                 <div class="post-thumbnail">
                     <img src="caribe.jpg" alt="Blog 2">
-                    <div class="post-overlay">
-                        <a href="#" class="cta-button">Leer Más</a>
-                    </div>
                 </div>
                 <div class="post-content">
-                    <h3>Las Mejores Playas para el Verano</h3>
+                    <h3><span class="dropcap">L</span>as Mejores Playas para el Verano</h3>
                     <p>Descubre las playas más hermosas para tus vacaciones de verano.</p>
+                    <a href="playas" class="cta-button">Leer Más</a>
                 </div>
             </div>
-            <!-- Más artículos aquí -->
+            <div class="blog-post">
+                <div class="post-thumbnail">
+                    <img src="peso.jpeg" alt="Blog 3">
+                </div>
+                <div class="post-content">
+                    <h3><span class="dropcap">G</span>uía Completa para Planificar un Viaje Internacional</h3>
+                    <p>Aprende los pasos esenciales para planificar tu viaje al extranjero de manera efectiva.</p>
+                    <a href="guia" class="cta-button">Leer Más</a>
+                </div>
+            </div>
+            <div class="blog-post">
+                <div class="post-thumbnail">
+                    <img src="sudamerica.jpeg" alt="Blog 4">
+                </div>
+                <div class="post-content">
+                    <h3><span class="dropcap">T</span>op 5 Destinos Inexplorados en Sudamérica</h3>
+                    <p>Descubre los lugares menos conocidos pero increíbles en Sudamérica.</p>
+                    <a href="topsdestinos" class="cta-button">Leer Más</a>
+                </div>
+            </div>
+            <div class="blog-post">
+                <div class="post-thumbnail">
+                    <img src="ordenar.jpeg" alt="Blog 5">
+                </div>
+                <div class="post-content">
+                    <h3><span class="dropcap">C</span>ómo Preparar tu Equipaje para un Viaje de Aventura</h3>
+                    <p>Tips y trucos para empacar de manera eficiente para tus viajes de aventura.</p>
+                    <a href="prepararequipage" class="cta-button">Leer Más</a>
+                </div>
+            </div>
+            <!-- Agrega más artículos según sea necesario -->
         </div>
     </div>
 </section>
 
 <style>
     .latest-articles {
-    background-color: #f4f4f4;
-    padding: 3rem 0;
-}
+        background-color: #f4f4f4;
+        padding: 4rem 0;
+        color: #333;
+        position: relative;
+        overflow: hidden;
+    }
 
-.latest-articles h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-    color: #333;
-    position: relative;
-}
+    .latest-articles::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 150%;
+        height: 100%;
+        background-color: #f4f4f4;
+        transform: translateX(-50%);
+        opacity: 0.1;
+        z-index: 0;
+    }
 
-.latest-articles h2::after {
-    content: '';
-    width: 60px;
-    height: 3px;
-    background-color: #ff5733;
-    display: block;
-    margin: 1rem auto 0;
-    border-radius: 2px;
-}
+    .latest-articles h2 {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 3rem;
+        color: #333;
+        font-family: 'Lora', serif;
+        position: relative;
+        font-weight: 700;
+        letter-spacing: 1px;
+        z-index: 1;
+        animation: fadeInDown 1s ease;
+    }
 
-.blog-posts {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-}
+    .latest-articles h2::before {
+        content: '✦';
+        font-size: 1.5rem;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: -1.5rem;
+        color: #333;
+    }
 
-.blog-post {
-    background-color: #f4f4f4;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
+    .blog-posts {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+    }
 
-.blog-post:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
+    @media (min-width: 768px) {
+        .blog-posts {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
 
-.post-thumbnail {
-    position: relative;
-    overflow: hidden;
-}
+    .blog-post {
+        background-color: rgba(44, 44, 52, 0.9);
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        width: 100%;
+        max-width: 320px;
+        display: flex;
+        flex-direction: column;
+        height: 500px; /* Ajusta la altura según sea necesario */
+        backdrop-filter: blur(10px);
+    }
 
-.post-thumbnail img {
-    width: 100%;
-    height: auto;
-    transition: transform 0.3s ease-in-out;
-}
+    .blog-post:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    }
 
-.blog-post:hover .post-thumbnail img {
-    transform: scale(1.1);
-}
+    .post-thumbnail img {
+        width: 100%;
+        height: 200px; /* Ajusta la altura según sea necesario */
+        object-fit: cover;
+        display: block;
+        filter: grayscale(80%);
+        transition: filter 0.3s ease;
+    }
 
-.post-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-}
+    .blog-post:hover .post-thumbnail img {
+        filter: grayscale(0%);
+    }
 
-.blog-post:hover .post-overlay {
-    opacity: 1;
-}
+    .post-content {
+        padding: 1.5rem;
+        text-align: center;
+        flex: 1;
+    }
 
-.cta-button {
-    background-color: #ff5733;
-    color: #fff;
-    padding: 0.75rem 1.5rem;
-    border-radius: 5px;
-    text-transform: uppercase;
-    font-weight: bold;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-}
+    .post-content h3 {
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
+        color: #ff4c60;
+        font-family: 'Lora', serif;
+        text-transform: capitalize;
+        letter-spacing: 0.5px;
+        position: relative;
+    }
 
-.cta-button:hover {
-    background-color: #e14b2c;
-}
+    .post-content p {
+        font-size: 0.9rem;
+        color: #b3b3b3;
+        margin-bottom: 1.5rem;
+        font-family: 'Lora', serif;
+        line-height: 1.6;
+    }
 
-.post-content {
-    padding: 1.5rem;
-    text-align: center;
-}
+    .cta-button {
+        background-color: #ff4c60;
+        color: #fff;
+        padding: 0.75rem 1.5rem;
+        border-radius: 50px;
+        text-transform: uppercase;
+        font-weight: bold;
+        text-decoration: none;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
 
-.post-content h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: #333;
-}
+    .cta-button:hover {
+        background-color: #ff6b81;
+        transform: scale(1.05);
+    }
 
-.post-content p {
-    font-size: 1rem;
-    color: #666;
-}
+    .cta-button:active {
+        transform: scale(0.95);
+    }
+
+    .dropcap {
+        font-size: 2rem;
+        color: #ff4c60;
+        float: left;
+        margin-right: 5px;
+        line-height: 1;
+        font-family: 'Lora', serif;
+    }
+
+    @keyframes fadeInDown {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @media (max-width: 768px) {
+        .latest-articles h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .post-content h3 {
+            font-size: 1.4rem;
+        }
+
+        .post-content p {
+            font-size: 0.875rem;
+        }
+
+        .cta-button {
+            padding: 0.65rem 1.2rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .latest-articles h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .post-content h3 {
+            font-size: 1.3rem;
+        }
+
+        .post-content p {
+            font-size: 0.875rem;
+        }
+
+        .cta-button {
+            padding: 0.5rem 1rem;
+        }
+    }
 </style>

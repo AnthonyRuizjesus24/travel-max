@@ -1,0 +1,245 @@
+---
+import '../styles/global.css'
+import Header from "../components/Header.astro"
+import Footer from '../components/Footer.astro'
+---
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cómo Preparar tu Equipaje para un Viaje de Aventura</title>
+</head>
+<body>
+    <Header/>
+
+    <section class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Cómo Preparar tu Equipaje para un Viaje de Aventura</h1>
+            <p>Prepárate para la aventura con esta guía completa sobre cómo empacar de manera eficiente y efectiva.</p>
+            <a href="/" class="cta-button">Ver Consejos de Empaque</a>
+        </div>
+    </section>
+
+    <div class="container main-content">
+        <section id="packing-tips">
+            <h2>Consejos para Empacar</h2>
+            <ul class="packing-tips">
+                <li class="tip-item">
+                    <img src="tip1.jpg" alt="Consejo 1">
+                    <div class="tip-info">
+                        <h3>Elige la Mochila Adecuada</h3>
+                        <p>Una mochila adecuada puede hacer una gran diferencia. Asegúrate de que sea cómoda y tenga suficiente capacidad para tus necesidades.</p>
+                    </div>
+                </li>
+                <li class="tip-item">
+                    <img src="tip2.jpg" alt="Consejo 2">
+                    <div class="tip-info">
+                        <h3>Empaca por Capas</h3>
+                        <p>Empacar en capas te permite adaptarte a diferentes condiciones climáticas. Incluye ropa base, intermedia y una capa exterior.</p>
+                    </div>
+                </li>
+                <li class="tip-item">
+                    <img src="tip3.jpg" alt="Consejo 3">
+                    <div class="tip-info">
+                        <h3>No Olvides los Accesorios</h3>
+                        <p>Los pequeños accesorios como guantes, gorros y linternas pueden ser esenciales en un viaje de aventura. No los dejes atrás.</p>
+                    </div>
+                </li>
+                <li class="tip-item">
+                    <img src="tip4.jpg" alt="Consejo 4">
+                    <div class="tip-info">
+                        <h3>Incluye Artículos de Seguridad</h3>
+                        <p>Un botiquín de primeros auxilios y otros artículos de seguridad son cruciales para estar preparado ante cualquier emergencia.</p>
+                    </div>
+                </li>
+                <li class="tip-item">
+                    <img src="tip5.jpg" alt="Consejo 5">
+                    <div class="tip-info">
+                        <h3>Revisa el Clima</h3>
+                        <p>Antes de salir, verifica el pronóstico del tiempo y ajusta tu equipaje en consecuencia para estar preparado para cualquier condición climática.</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </div>
+
+    <Footer/>
+</body>
+</html>
+
+<style>
+    /* Reset básico */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Arial', sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background-color: #f4f4f4;
+    }
+
+    .container {
+        width: 80%;
+        margin: auto;
+        overflow: hidden;
+    }
+
+    /* Estilos del hero */
+    .hero-section {
+        position: relative;
+        height: 60vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-align: center;
+        overflow: hidden;
+        background: url('paris.jpg') no-repeat center center/cover;
+        z-index: 0;
+    }
+
+    .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 0;
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 0;
+        max-width: 700px;
+        padding: 0 20px;
+        text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    .hero-content p {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .cta-button {
+        background-color: #ff5733;
+        color: #fff;
+        padding: 1rem 2rem;
+        border: none;
+        border-radius: 5px;
+        font-size: 1rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .cta-button:hover {
+        background-color: #ff9a3c;
+        transform: translateY(-2px);
+    }
+
+    /* Estilos del contenido principal */
+    .main-content {
+        padding: 2rem 0;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .main-content h2 {
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        color: #ff5733;
+    }
+
+    .packing-tips {
+        list-style-type: none;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .tip-item {
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        flex: 1 1 calc(50% - 1rem);
+        margin-bottom: 1.5rem;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .tip-item:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .tip-item img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .tip-info {
+        padding: 1rem;
+    }
+
+    .tip-info h3 {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+        color: #ff5733;
+    }
+
+    .tip-info p {
+        font-size: 1rem;
+        color: #666;
+    }
+
+    /* Estilos responsivos */
+    @media (max-width: 768px) {
+        .container {
+            width: 90%;
+        }
+
+        .hero-section {
+            height: 50vh;
+        }
+
+        .cta-button {
+            font-size: 0.9rem;
+        }
+
+        .tip-item {
+            flex: 1 1 100%;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .cta-button {
+            padding: 0.5rem 1rem;
+            font-size: 0.8rem;
+        }
+
+        .hero-section {
+            height: 60vh;
+        }
+    }
+</style>

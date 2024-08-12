@@ -12,12 +12,14 @@ body {
     background-color: #f4f4f4;
 }
 
+/* Contenedor general */
 .container {
     width: 80%;
     margin: auto;
     overflow: hidden;
 }
 
+/* Estilos del encabezado */
 header {
     background: #292b2c;
     color: #fff;
@@ -55,31 +57,88 @@ nav ul li a:hover {
     color: #ff5733;
 }
 
+/* Estilos para la sección hero */
 #hero {
-    height: 60vh;
-    background: url('/paris.jpg') no-repeat center center/cover;
     position: relative;
+    height: 60vh;
     display: flex;
-    justify-content: center;
     align-items: center;
-    color: #fff;
+    justify-content: center;
+    color: white;
     text-align: center;
+    overflow: hidden;
+    z-index: 0;
+    background: url('paris.jpg') no-repeat center center/cover;
 }
 
 .hero-overlay {
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Overlay oscuro para mejorar la legibilidad del texto */
+    z-index: 0;
+}
+
+.hero-bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('paris.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.6);
+    z-index: 0;
+    animation: zoomIn 20s ease-in-out infinite alternate;
 }
 
 .hero-content {
     position: relative;
     z-index: 0;
+    max-width: 700px;
+    padding: 0 20px;
+    animation: fadeInUp 1.5s ease-in-out;
 }
 
+.hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.1);
+    }
+}
+
+/* Sección de destinos */
 .destinos-section {
     padding: 4rem 0;
 }
@@ -137,35 +196,6 @@ nav ul li a:hover {
     background: #c70039;
 }
 
-footer {
-    background: #292b2c;
-    color: #fff;
-    text-align: center;
-    padding: 2rem 0;
-}
-
-.footer-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.footer-social a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 10px;
-    font-size: 1.5rem;
-}
-
-.footer-links a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 10px;
-}
-
-.footer-social a:hover, .footer-links a:hover {
-    color: #ff5733;
-}
 
 /* Estilos responsivos */
 @media (max-width: 768px) {
@@ -190,6 +220,14 @@ footer {
 
     #hero {
         height: 50vh;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1.2rem;
     }
 
     .cta-button {
@@ -222,4 +260,13 @@ footer {
     #hero {
         height: 40vh;
     }
+
+    .hero-content h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
 }
+

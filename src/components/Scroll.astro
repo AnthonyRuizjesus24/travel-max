@@ -1,0 +1,72 @@
+<div class="scroll-down-indicator">
+    <span></span>
+    <p>Desplázate hacia abajo</p>
+</div>
+
+<script>
+    document.querySelector('.scroll-down-indicator').addEventListener('click', function() {
+        window.scrollTo({
+            top: window.innerHeight,
+            behavior: 'smooth'
+        });
+    });
+</script>
+
+<style>
+    .scroll-down-indicator {
+        position: absolute;
+        bottom: 20px; /* Reduce el espacio en pantallas pequeñas */
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .scroll-down-indicator span {
+        display: block;
+        width: 24px; /* Reduce el tamaño en pantallas pequeñas */
+        height: 24px; /* Reduce el tamaño en pantallas pequeñas */
+        border-bottom: 2px solid white;
+        border-right: 2px solid white;
+        transform: rotate(45deg);
+        margin-bottom: 5px;
+        animation: scrollDown 1s infinite;
+    }
+
+    .scroll-down-indicator p {
+        font-size: 14px; /* Ajuste para pantallas pequeñas */
+        color: white;
+        opacity: 0.7;
+        margin: 0;
+    }
+
+    @keyframes scrollDown {
+        0% {
+            transform: rotate(45deg) translateY(0);
+        }
+        50% {
+            transform: rotate(45deg) translateY(5px);
+        }
+        100% {
+            transform: rotate(45deg) translateY(0);
+        }
+    }
+
+    @media (max-width: 768px) {
+        .scroll-down-indicator {
+            bottom: 10px; /* Reduce aún más el espacio en pantallas muy pequeñas */
+        }
+
+        .scroll-down-indicator span {
+            width: 20px; /* Ajuste para pantallas pequeñas */
+            height: 20px; /* Ajuste para pantallas pequeñas */
+        }
+
+        .scroll-down-indicator p {
+            font-size: 12px; /* Ajuste para pantallas muy pequeñas */
+        }
+    }
+</style>

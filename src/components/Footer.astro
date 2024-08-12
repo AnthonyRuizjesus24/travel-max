@@ -1,285 +1,193 @@
-<footer>
-    <div class="container footer-content">
-        <!-- Sección de redes sociales -->
-        <div class="footer-top">
-            <div class="footer-social">
-                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-            </div>
-            <!-- Enlaces de navegación -->
+<footer class="travel-footer">
+    <div class="footer-top">
+        <div class="brand-logo">
+            <img src="logo.png" alt="Explora Viajes">
+            <p>Descubre el mundo con nosotros. Aventuras inolvidables en cada destino.</p>
         </div>
-        <!-- Sección de suscripción al boletín -->
-        <div class="footer-newsletter">
-            <h4>¡Suscríbete a nuestro boletín!</h4>
-            <form action="#" method="post">
-                <input type="email" placeholder="Ingresa tu correo electrónico" required>
+        <div class="footer-navigation">
+            <nav>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Destinos</a></li>
+                    <li><a href="#">Paquetes</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="social-media">
+            <h4>Conéctate con nosotros</h4>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+        <div class="newsletter">
+            <h4>Suscríbete a nuestro boletín</h4>
+            <form>
+                <input type="email" placeholder="Tu correo electrónico" required>
                 <button type="submit">Suscribirse</button>
             </form>
         </div>
-        <!-- Sección de contacto rápido -->
-        <div class="footer-contact">
-            <a href="tel:+51-921993576" class="contact-icon"><i class="fas fa-phone"></i> Llamada</a>
-            <a href="https://wa.me/+51-921993576" class="contact-icon"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-            <a href="mailto:info@exploraviajes.com" class="contact-icon"><i class="fas fa-envelope"></i> Correo</a>
+    </div>
+    <div class="footer-bottom">
+        <div class="footer-links">
+            <a href="#">Términos y Condiciones</a>
+            <a href="#">Política de Privacidad</a>
         </div>
-        <!-- Carrusel de testimonios -->
-        <div class="footer-testimonials">
-            <h4>Lo que dicen nuestros clientes</h4>
-            <div class="testimonials-slider">
-                <div class="testimonial">
-                    <p>"¡Una experiencia increíble! Gracias por todo, Explora Viajes."</p>
-                    <span>- Ana, Perú</span>
-                </div>
-                <div class="testimonial">
-                    <p>"El mejor servicio que he recibido en mis vacaciones."</p>
-                    <span>- Juan, Colombia</span>
-                </div>
-                <!-- Añade más testimonios aquí -->
-            </div>
-        </div>
-        <!-- Mapa de ubicación -->
-        <div class="footer-map">
-            <h4>Nuestra ubicación</h4>
-            <iframe src="https://www.google.com/maps/embed?pb=YOUR_MAP_URL" allowfullscreen="" loading="lazy"></iframe>
-            
-        </div>
-        <!-- Enlaces de descarga de la app -->
-        <div class="footer-app-links">
-            <a href="#"><img src="playstore.svg" alt="App Store"></a>
-            <a href="#"><img src="playstore.png" alt="Google Play"></a>
-        </div>
-        <!-- Derechos reservados -->
-        <div class="footer-bottom">
-            <p>&copy; 2024 Explora Viajes. Todos los derechos reservados.</p>
-        </div>
+        <p>&copy; 2024 Explora Viajes. Todos los derechos reservados.</p>
     </div>
 </footer>
 
+
 <style>
-footer {
-    background: #333;
-    color: #fff;
+/* Estilos generales */
+.travel-footer {
+    background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+    color: #ffffff;
+    padding: 2rem 1rem;
     text-align: center;
-    padding: 2rem 0;
-    position: relative;
-    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
 }
 
-footer::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 200%;
-    height: 100%;
-    background: linear-gradient(45deg, rgba(255,87,51,0.5), rgba(51,51,255,0.5));
-    z-index: 1;
-    transform: translateX(-50%) scaleY(0.5);
-    opacity: 0.3;
-    animation: wave 5s infinite linear;
-}
-
-@keyframes wave {
-    0% {
-        transform: translateX(-50%) scaleY(0.5);
-    }
-    50% {
-        transform: translateX(-50%) scaleY(0.7);
-    }
-    100% {
-        transform: translateX(-50%) scaleY(0.5);
-    }
-}
-
-.footer-content {
-    position: relative;
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-}
-
-.footer-social {
-    display: flex;
-    gap: 1rem;
-}
-
-.footer-social a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.5rem;
-    transition: color 0.3s ease, transform 0.3s ease;
-}
-
-.footer-social a:hover {
-    color: #ff5733;
-    transform: scale(1.1);
-}
-
-.footer-links {
+.footer-top {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.footer-links a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1rem;
-    padding: 0.5rem;
-    transition: color 0.3s ease, text-decoration 0.3s ease;
-}
-
-.footer-links a:hover {
-    color: #ff5733;
-    text-decoration: underline;
-}
-
-.footer-newsletter {
-    margin-top: 2rem;
-    text-align: center;
-}
-
-.footer-newsletter h4 {
+.brand-logo img {
+    width: 150px;
     margin-bottom: 1rem;
-    font-size: 1.25rem;
-    color: #fff;
 }
 
-.footer-newsletter form {
+.brand-logo p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #ffffff;
+    opacity: 0.8;
+}
+
+.footer-navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     gap: 0.5rem;
 }
 
-.footer-newsletter input {
+.footer-navigation a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.footer-navigation a:hover {
+    color: #fdbb2d;
+}
+
+.social-media h4 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: #ffffff;
+}
+
+.social-icons {
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: center;
+    gap: 1rem;
+}
+
+.social-icons a {
+    color: #ffffff;
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    transform: scale(1.2);
+}
+
+.newsletter h4 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;}
+
+.newsletter form {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.newsletter input {
     padding: 0.75rem;
     border: none;
-    border-radius: 4px;
-    font-size: 1rem;
+    border-radius: 25px;
     width: 250px;
 }
 
-.footer-newsletter button {
-    padding: 0.75rem 1rem;
-    background-color: #ff5733;
-    color: #fff;
+.newsletter button {
+    padding: 0.75rem 1.5rem;
+    background-color: #fdbb2d;
     border: none;
-    border-radius: 4px;
+    border-radius: 25px;
+    color: #1a2a6c;
+    font-size: 1rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
-.footer-newsletter button:hover {
-    background-color: #e14b2c;
+.newsletter button:hover {
+    background-color: #ffffff;
+    color: #1a2a6c;
 }
 
-.footer-contact {
+.footer-bottom {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    font-size: 0.875rem;
+}
+
+.footer-links {
     display: flex;
+    justify-content: center;
     gap: 1.5rem;
-    margin-top: 2rem;
-    justify-content: center;
-}
+    margin-bottom: 1rem;}
 
-.footer-contact a {
-    color: #fff;
+.footer-links a {
+    color: #ffffff;
     text-decoration: none;
-    font-size: 1rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    transition: color 0.3s ease, transform 0.3s ease;
+    font-size: 0.875rem;}
+
+.footer-links a:hover {
+    color: #fdbb2d;
 }
 
-.footer-contact a:hover {
-    color: #ff5733;
-    transform: scale(1.1);
-}
-
-.footer-testimonials {
-    margin-top: 2rem;
-    text-align: center;
-    color: #fff;
-}
-
-.footer-testimonials h4 {
-    margin-bottom: 1rem;
-    font-size: 1.25rem;
-}
-
-.testimonials-slider {
-    display: flex;
-    overflow-x: auto;
-    gap: 1rem;
-}
-
-.testimonial {
-    min-width: 250px;
-    background: #444;
-    padding: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.testimonial p {
-    font-size: 0.875rem;
-    margin-bottom: 0.5rem;
-}
-
-.testimonial span {
-    font-size: 0.75rem;
-    color: #ddd;
-}
-
-.footer-map {
-    margin-top: 2rem;
-    text-align: center;
-}
-
-.footer-map h4 {
-    margin-bottom: 1rem;
-    font-size: 1.25rem;
-    color: #fff;
-}
-
-.footer-map iframe {
-    border-radius: 8px;
-}
-
-.footer-app-links {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-top: 2rem;
-}
-
-.footer-app-links a img {
-    width: 150px;
-    transition: transform 0.3s ease;
-}
-
-.footer-app-links a img:hover {
-    transform: scale(1.1);
-}
-
-footer p {
-    margin: 0;
-    font-size: 0.875rem;
-    color: #ddd;
-}
-
-/* Estilos responsivos */
 @media (max-width: 768px) {
-    .footer-links {
+    .footer-top {
         flex-direction: column;
+        text-align: center;
     }
 
-    .footer-links a {
-        margin: 0.5rem 0;
+    .footer-navigation ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .newsletter input {
+        width: 100%;
     }
 }
 </style>
